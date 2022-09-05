@@ -27,6 +27,8 @@ Conflicts:	GeoIP < 1.6.0
 ExclusiveArch:	%go_arches
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_enable_debug_packages 0
+
 %description
 The GeoIP Update program performs automatic updates of GeoIP2 and
 GeoIP Legacy binary databases. Currently the program only supports

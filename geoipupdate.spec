@@ -11,10 +11,12 @@ Source0:	https://github.com/maxmind/geoipupdate/archive/refs/tags/v%{version}/%{
 URL:		https://github.com/maxmind/geoipupdate
 BuildRequires:	curl-devel
 BuildRequires:	golang >= 1.3.1
+BuildRequires:	rpmbuild(macros) >= 2.009
 BuildRequires:	zlib-devel
 Provides:	GeoIP-update = %{version}-%{release}
 Obsoletes:	GeoIP-update <= 2.2.2-2
 Conflicts:	GeoIP < 1.6.0
+ExclusiveArch:	%go_arches
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

@@ -8,6 +8,13 @@ Group:		Applications/Networking
 #Source0Download: https://github.com/maxmind/geoipupdate/releases
 Source0:	https://github.com/maxmind/geoipupdate/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	edd364519222e99b1009aec7d7edfb40
+%if 0
+go mod vendor
+tar -caf ~/geoipupdate-vendor.tar.xz vendor
+%endif
+Source1:	%{name}-vendor-%{version}.tar.xz
+# Source1-md5:	c232481778faf5d48bb9e6994d54ad82
+Patch0:		go-vendor.patch
 URL:		https://github.com/maxmind/geoipupdate
 BuildRequires:	curl-devel
 BuildRequires:	golang >= 1.3.1
@@ -30,7 +37,8 @@ danych GeoIP2 lub GeoIP Legacy. Obecnie program działa tylko na
 Linuksie i innych systemach uniksowych.
 
 %prep
-%setup -q
+%setup -q -a1
+%patch0 -p1
 
 %build
 %{__make} \

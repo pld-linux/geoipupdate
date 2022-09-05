@@ -1,0 +1,11 @@
+--- geoipupdate-4.9.0/Makefile~	2022-02-16 00:25:37.000000000 +0200
++++ geoipupdate-4.9.0/Makefile	2022-09-05 18:27:40.067617133 +0300
+@@ -41,7 +41,7 @@
+ 	mkdir -p $(BUILDDIR)
+ 
+ $(BUILDDIR)/geoipupdate: $(BUILDDIR)
+-	(cd cmd/geoipupdate && go build -ldflags '-X main.defaultConfigFile=$(CONFFILE) -X main.defaultDatabaseDirectory=$(DATADIR) -X "main.version=$(VERSION)"')
++	(cd cmd/geoipupdate && go build -mod=vendor -ldflags '-X main.defaultConfigFile=$(CONFFILE) -X main.defaultDatabaseDirectory=$(DATADIR) -X "main.version=$(VERSION)"')
+ 	cp cmd/geoipupdate/geoipupdate $(BUILDDIR)
+ 
+ $(BUILDDIR)/GeoIP.conf: $(BUILDDIR) conf/GeoIP.conf.default

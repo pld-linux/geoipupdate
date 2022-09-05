@@ -18,7 +18,6 @@ Patch0:		go-vendor.patch
 URL:		https://github.com/maxmind/geoipupdate
 BuildRequires:	curl-devel
 BuildRequires:	golang >= 1.3.1
-# AUTO: -- Can't exec "pandoc": No such file or directory at dev-bin/make-man-pages.pl line 35.
 BuildRequires:	pandoc
 BuildRequires:	rpmbuild(macros) >= 2.009
 BuildRequires:	zlib-devel

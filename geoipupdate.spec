@@ -12,7 +12,7 @@ Source0:	https://github.com/maxmind/geoipupdate/archive/refs/tags/v%{version}/%{
 go mod vendor
 tar -caf ~/geoipupdate-vendor.tar.xz vendor
 %endif
-Source1:	%{name}-vendor-%{version}.tar.xz
+Source1:	http://carme.pld-linux.org/~glen/geoipupdate-vendor-4.9.0.tar.xz
 # Source1-md5:	c232481778faf5d48bb9e6994d54ad82
 Patch0:		go-vendor.patch
 URL:		https://github.com/maxmind/geoipupdate

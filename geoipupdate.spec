@@ -1,16 +1,18 @@
 Summary:	GeoIP Update - automatically update GeoIP2 or GeoIP Legacy binary databases
 Summary(pl.UTF-8):	GeoIP Update - automatyczna aktualizacja binarnych baz danych GeoIP2 lub GeoIP Legacy
-Name:		GeoIP-update
+Name:		geoipupdate
 Version:	2.2.2
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Libraries
 #Source0Download: https://github.com/maxmind/geoipupdate/releases
-Source0:	https://github.com/maxmind/geoipupdate/releases/download/v%{version}/geoipupdate-%{version}.tar.gz
+Source0:	https://github.com/maxmind/geoipupdate/releases/download/v%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	06284bd7bcb298d078d794eb630dae55
 URL:		https://github.com/maxmind/geoipupdate
 BuildRequires:	curl-devel
 BuildRequires:	zlib-devel
+Provides:	GeoIP-update = %{version}-%{release}
+Obsoletes:	GeoIP-update <= 2.2.2-2
 Conflicts:	GeoIP < 1.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,7 +27,7 @@ danych GeoIP2 lub GeoIP Legacy. Obecnie program działa tylko na
 Linuksie i innych systemach uniksowych.
 
 %prep
-%setup -q -n geoipupdate-%{version}
+%setup -q
 
 %build
 %configure

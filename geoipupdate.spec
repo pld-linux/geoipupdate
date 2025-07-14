@@ -41,7 +41,7 @@ Linuksie i innych systemach uniksowych.
 
 %prep
 %setup -q -a1
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__make} \

@@ -1,20 +1,20 @@
 Summary:	GeoIP Update - automatically update GeoIP2 or GeoIP Legacy binary databases
 Summary(pl.UTF-8):	GeoIP Update - automatyczna aktualizacja binarnych baz danych GeoIP2 lub GeoIP Legacy
 Name:		geoipupdate
-Version:	7.1.1
+Version:	8.0.0
 Release:	1
 License:	Apache v2.0
 Group:		Applications/Networking
 #Source0Download: https://github.com/maxmind/geoipupdate/releases
 Source0:	https://github.com/maxmind/geoipupdate/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	8e17067fb6ad64d8c18ada2f62c58cb6
+# Source0-md5:	9d1f623c6494832bf0757f932aabac97
 # cd %{name}-%{version}
 # go mod vendor
 # tar cJf ../%{name}-vendor-%{version}.tar.xz vendor
 Source1:	%{name}-vendor-%{version}.tar.xz
-# Source1-md5:	e89edc2e821efbcd7ab9efab523b6883
+# Source1-md5:	b8f6e3faa3ea77e4a2588d286f24a57c
 URL:		https://github.com/maxmind/geoipupdate
-BuildRequires:	golang >= 1.23
+BuildRequires:	golang >= 1.25
 BuildRequires:	pandoc
 BuildRequires:	rpmbuild(macros) >= 2.009
 Provides:	GeoIP-update = %{version}-%{release}
